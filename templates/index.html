@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/main.css">
+    <title>Data Collector App</title>
+</head>
+<body>
+    <!-- Create html page using Emmet  -->
+    <!-- .container>h1{Collecting height}+h3{Please fill the entires to get population statistics on height}  -->
+    <div class="container">
+        <h1>Collecting height</h1>
+        <h3>Please fill the entires to get population statistics on height</h3>
+        <div class="message">
+            {{text | safe}}
+        </div>
+        <form action="{{url_for('success')}}" method='post'>
+            <fieldset>
+                <legend>Your data save with us!</legend>
+                <label for="email">Email : </label><input type="email" name="email" id="email" placeholder="Enter your email address" required><br>
+                <label for="height_input">Height:</label><input type="number" name="height" id="height" placeholder="Enter your height in cm" min="50" max="300" required><br>
+                <button type="submit">Submit</button>
+            </fieldset>    
+        </form>
+        
+    </div>
+    
+</body>
+</html>
