@@ -14,28 +14,32 @@ gmail_server = email_creds[2].text
 port_server = email_creds[3].text
 
 # Send email
-def send_email(emailaddr, height, ave_height, total):
+def send_email(name, emailaddr, height, ave_height, total):
     to_email = emailaddr
     subject = "Your height information"
     message_text = """\
-        Hi there, 
+        Hi %s, 
+
         This is information about your height, your height: %s cm. The average height is %s cm out of %s people. 
 
         Thanks,
-        """% (height, ave_height, total)
+
+        Survey Teams
+        """% (name, height, ave_height, total)
 
     message_html="""\
         <html>
             <body>
-                <p>Hi there,<br>
+                <p>Hi %s,<br><br>
                 This is information about your height, your height: <strong>%s</strong> cm.<br>
-                The average height is %s cm out of %s people.<br> 
+                The average height is <strong>%s</strong> cm out of <strong>%s</strong> people.<br> 
                 <br>
-                Thanks,
+                Thanks,<br><br>
+                Survey Teams
                 </p>
             </body>
         </html>
-        """% (height, ave_height, total)
+        """% (name, height, ave_height, total)
 
     msg = MIMEMultipart("alternative")
     msg['Subject'] = subject
