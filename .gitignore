@@ -139,7 +139,6 @@ cython_debug/
 
 # Credential
 credentials.xml
-emailCredentials.xml
 
 # others
 __pycache__
