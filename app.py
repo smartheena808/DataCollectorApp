@@ -16,12 +16,14 @@ creds = et.parse('credentials.xml').getroot()
 dbname = creds[0].text
 user = creds[1].text
 pwd = creds[2].text
-connstring = f"postgresql://{user}:{pwd}@localhost/{dbname}"
+#connstring = f"postgresql://{user}:{pwd}@localhost/{dbname}"
+connstring = 'postgres://iqgitdvwvjwpvf:1805e57bd9906c45552cc802be4085f62b42a1157c8c1e7843409e5bbcdece1d@ec2-52-5-247-46.compute-1.amazonaws.com:5432/dbf11cvkutv4e2?sslmode=require'
 
 # Create flask object
 app = Flask(__name__)
 # Create flask db using sqlalchemy 
 app.config['SQLALCHEMY_DATABASE_URI']=connstring
+
 db = SQLAlchemy(app)
 
 class Data(db.Model):

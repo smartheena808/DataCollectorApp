@@ -141,5 +141,5 @@ cython_debug/
 credentials.xml
 emailCredentials.xml
 
-# directory files
-/uploaded_files
+# others
+__pycache__
