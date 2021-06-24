@@ -139,6 +139,3 @@ cython_debug/
 
 # Credential
 credentials.xml
-
-# others
-__pycache__
