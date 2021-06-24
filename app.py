@@ -68,14 +68,14 @@ def success():
             if request.files["upload_file"].filename != '':
                 file = request.files["upload_file"]
                 # Save the uploaded file
-                uploadedFile = "uploaded_file_"+file.filename
-                parentPath = os.getcwd()
+                #uploadedFile = "uploaded_file_"+file.filename
+                #parentPath = os.getcwd()
                 # check whether the directory is exists
-                if os.path.isdir(os.path.join(parentPath, "uploaded_files", name)):
-                    file.save(os.path.join(parentPath, "uploaded_files", name, secure_filename(uploadedFile)))
-                else:
-                    os.mkdir(os.path.join(parentPath, "uploaded_files", name))
-                    file.save(os.path.join(parentPath, "uploaded_files", name, secure_filename(uploadedFile)))
+                #if os.path.isdir(os.path.join(parentPath, "uploaded_files", name)):
+                #    file.save(os.path.join(parentPath, "uploaded_files", name, secure_filename(uploadedFile)))
+                #else:
+                #    os.mkdir(os.path.join(parentPath, "uploaded_files", name))
+                #    file.save(os.path.join(parentPath, "uploaded_files", name, secure_filename(uploadedFile)))
                 upload_file = "Yes"    
             else:
                 upload_file = "No"
