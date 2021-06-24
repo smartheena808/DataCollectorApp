@@ -48,13 +48,12 @@ class Data(db.Model):
 @app.route("/")
 def index():
     # clear the sample email, just for testing purposes
-    # TODO: delete this in prod
-    try:
+    #try:
         # this email use for testing purposes
-        db.session.query(Data).filter(Data.email_=="smartconan808@gmail.com").delete()
-        db.session.commit()
-    except:
-        db.session.rollback()    
+    #    db.session.query(Data).filter(Data.email_=="smartconan808@gmail.com").delete()
+    #    db.session.commit()
+    #except:
+    #    db.session.rollback()    
     return render_template("index.html")
 
 @app.route("/success", methods=['POST','GET'])
